@@ -7,6 +7,8 @@ High performance Spigot fork that aims to fix gameplay and mechanics inconsisten
 **Support and Project Discussion:**
  - [IRC](https://irc.spi.gt/iris/?channels=paper) or [Discord](https://discord.gg/papermc)
 
+**What is this - Atom:**
+ - I made this fork to expose AttributeDefaults.b and make it mutable so I don't have to put up with fucking reflection bullshit, this is quite a niche thing so if you want to use this go ahead idrc.
 
 How To (Server Admins)
 ------
