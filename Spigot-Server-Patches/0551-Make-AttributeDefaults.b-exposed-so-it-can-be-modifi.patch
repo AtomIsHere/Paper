@@ -4,13 +4,14 @@ Date: Sun, 9 Aug 2020 12:42:03 +1000
 Subject: [PATCH] Make AttributeDefaults.b exposed so it can be modified in
  order to add CustomEntities.
 
+Fix dumb mistake
 
 diff --git a/src/main/java/net/minecraft/server/AttributeDefaults.java b/src/main/java/net/minecraft/server/AttributeDefaults.java
 new file mode 100644
-index 0000000000000000000000000000000000000000..7b76664d231cfad49bda179401adacb56a2255fa
+index 0000000000000000000000000000000000000000..38effc39b345f0b3acd8e6252cb0c467ed4f3134
 --- /dev/null
 +++ b/src/main/java/net/minecraft/server/AttributeDefaults.java
-@@ -0,0 +1,47 @@
+@@ -0,0 +1,51 @@
 +package net.minecraft.server;
 +
 +import com.google.common.collect.ImmutableMap;
@@ -48,8 +49,12 @@ index 0000000000000000000000000000000000000000..7b76664d231cfad49bda179401adacb5
 +        });
 +    }
 +
-+    public void addDefaults(EntityTypes<? extends EntityLiving> type, AttributeProvider.Builder builder) {
++    public static void addDefaults(EntityTypes<? extends EntityLiving> type, AttributeProvider.Builder builder) {
 +        b.put(type, builder.a());
++    }
++
++    public static Map<EntityTypes<? extends EntityLiving>, AttributeProvider> getDefaults() {
++        return b;
 +    }
 +
 +    static {
